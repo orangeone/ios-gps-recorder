@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		8C5C80F81A1C7434007FC7CA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5C80F71A1C7434007FC7CA /* Default-568h@2x.png */; };
+		8C75148B1A1C756A00B6F2AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5C80F71A1C7434007FC7CA /* Default-568h@2x.png */; };
+		8C75148C1A1C756A00B6F2AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5C80F71A1C7434007FC7CA /* Default-568h@2x.png */; };
 		D51EB90E127A297C0016E191 /* hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = D51EB90C127A297C0016E191 /* hardware.m */; };
 		D52550B013C9C0950050DD86 /* Base64+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D525509C13C9C0950050DD86 /* Base64+ELHASO.m */; };
 		D52550B113C9C0950050DD86 /* CLLocation+ELHASO.m in Sources */ = {isa = PBXBuildFile; fileRef = D525509E13C9C0950050DD86 /* CLLocation+ELHASO.m */; };
@@ -190,12 +193,13 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* Record_my_position.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Record_my_position.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* ios-gps-recorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-gps-recorder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* Record_my_position_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Record_my_position_Prefix.pch; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* Record_my_position-dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Record_my_position-dev.plist"; path = "resources/Record_my_position-dev.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* ios-gps-recorder_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ios-gps-recorder_Prefix.pch"; sourceTree = "<group>"; };
+		8C5C80F71A1C7434007FC7CA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* ios-gps-recorder-dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ios-gps-recorder-dev.plist"; path = "resources/ios-gps-recorder-dev.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		D51EB90B127A297C0016E191 /* hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hardware.h; sourceTree = "<group>"; };
 		D51EB90C127A297C0016E191 /* hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hardware.m; sourceTree = "<group>"; };
 		D525509B13C9C0950050DD86 /* Base64+ELHASO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Base64+ELHASO.h"; sourceTree = "<group>"; };
@@ -247,8 +251,8 @@
 		D5753E9713D33D8D0088E034 /* info_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_icon@2x.png"; sourceTree = "<group>"; };
 		D57789F6130B3EDF00AB5803 /* back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpg; sourceTree = "<group>"; };
 		D57789F7130B3EDF00AB5803 /* back@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "back@2x.jpg"; sourceTree = "<group>"; };
-		D59AAF14134BC5BC00E81139 /* Record_my_position_appstore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Record_my_position_appstore.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D59AAF16134BC5BC00E81139 /* Record_my_position-appstore.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Record_my_position-appstore.plist"; path = "resources/Record_my_position-appstore.plist"; sourceTree = "<group>"; };
+		D59AAF14134BC5BC00E81139 /* ios-gps-recorder_appstore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-gps-recorder_appstore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D59AAF16134BC5BC00E81139 /* ios-gps-recorder-appstore.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ios-gps-recorder-appstore.plist"; path = "resources/ios-gps-recorder-appstore.plist"; sourceTree = "<group>"; };
 		D59D034F126E372400F4D543 /* App_delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App_delegate.h; sourceTree = "<group>"; };
 		D59D0350126E372400F4D543 /* App_delegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App_delegate.m; sourceTree = "<group>"; };
 		D5AAF85015CDB55D006D6D90 /* DCCrossHairView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCCrossHairView.h; path = DCIntrospect/DCIntrospect/DCCrossHairView.h; sourceTree = "<group>"; };
@@ -350,9 +354,9 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Record_my_position.app */,
+				1D6058910D05DD3D006BFB54 /* ios-gps-recorder.app */,
 				D5B08A7E133D30E700A60B34 /* Er_recorder.app */,
-				D59AAF14134BC5BC00E81139 /* Record_my_position_appstore.app */,
+				D59AAF14134BC5BC00E81139 /* ios-gps-recorder_appstore.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,11 +365,11 @@
 			isa = PBXGroup;
 			children = (
 				D5BEDA51126F8C6A0056DB78 /* external */,
-				D506B265126D974B00902BDD /* src */,
-				D56FF233127AC9C60023FC0C /* resources */,
-				29B97315FDCFA39411CA2CEA /* Other */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				29B97315FDCFA39411CA2CEA /* Other */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				D56FF233127AC9C60023FC0C /* resources */,
+				D506B265126D974B00902BDD /* src */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -374,9 +378,9 @@
 			isa = PBXGroup;
 			children = (
 				D5B08A80133D30E700A60B34 /* Er_recorder.plist */,
-				8D1107310486CEB800E47090 /* Record_my_position-dev.plist */,
-				D59AAF16134BC5BC00E81139 /* Record_my_position-appstore.plist */,
-				32CA4F630368D1EE00C91783 /* Record_my_position_Prefix.pch */,
+				8D1107310486CEB800E47090 /* ios-gps-recorder-dev.plist */,
+				D59AAF16134BC5BC00E81139 /* ios-gps-recorder-appstore.plist */,
+				32CA4F630368D1EE00C91783 /* ios-gps-recorder_Prefix.pch */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -466,6 +470,7 @@
 		D56FF233127AC9C60023FC0C /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				8C5C80F71A1C7434007FC7CA /* Default-568h@2x.png */,
 				D5753E3C13D332450088E034 /* info */,
 				D57789F6130B3EDF00AB5803 /* back.jpg */,
 				D57789F7130B3EDF00AB5803 /* back@2x.jpg */,
@@ -579,9 +584,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* Record_my_position */ = {
+		1D6058900D05DD3D006BFB54 /* ios-gps-recorder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Record_my_position" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ios-gps-recorder" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -591,14 +596,14 @@
 			);
 			dependencies = (
 			);
-			name = Record_my_position;
+			name = "ios-gps-recorder";
 			productName = Record_my_position;
-			productReference = 1D6058910D05DD3D006BFB54 /* Record_my_position.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* ios-gps-recorder.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D59AAEE9134BC5BC00E81139 /* Record_my_position_appstore */ = {
+		D59AAEE9134BC5BC00E81139 /* ios-gps-recorder_appstore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D59AAF11134BC5BC00E81139 /* Build configuration list for PBXNativeTarget "Record_my_position_appstore" */;
+			buildConfigurationList = D59AAF11134BC5BC00E81139 /* Build configuration list for PBXNativeTarget "ios-gps-recorder_appstore" */;
 			buildPhases = (
 				D59AAEEA134BC5BC00E81139 /* Resources */,
 				D59AAEF5134BC5BC00E81139 /* Sources */,
@@ -608,9 +613,9 @@
 			);
 			dependencies = (
 			);
-			name = Record_my_position_appstore;
+			name = "ios-gps-recorder_appstore";
 			productName = Record_my_position;
-			productReference = D59AAF14134BC5BC00E81139 /* Record_my_position_appstore.app */;
+			productReference = D59AAF14134BC5BC00E81139 /* ios-gps-recorder_appstore.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D5B08A53133D30E700A60B34 /* Er recorder adhoc */ = {
@@ -635,8 +640,19 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Record_my_position" */;
-			compatibilityVersion = "Xcode 3.1";
+			attributes = {
+				LastUpgradeCheck = 0610;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = CB985SXKA3;
+					};
+					D59AAEE9134BC5BC00E81139 = {
+						DevelopmentTeam = CB985SXKA3;
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ios-gps-recorder" */;
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -649,9 +665,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* Record_my_position */,
+				1D6058900D05DD3D006BFB54 /* ios-gps-recorder */,
 				D5B08A53133D30E700A60B34 /* Er recorder adhoc */,
-				D59AAEE9134BC5BC00E81139 /* Record_my_position_appstore */,
+				D59AAEE9134BC5BC00E81139 /* ios-gps-recorder_appstore */,
 			);
 		};
 /* End PBXProject section */
@@ -662,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D56FF235127AC9C60023FC0C /* Icon.png in Resources */,
+				8C5C80F81A1C7434007FC7CA /* Default-568h@2x.png in Resources */,
 				D56FF247127ACA810023FC0C /* Icon@2x.png in Resources */,
 				D5B75C6C1297D87800A4142B /* capture_icon.png in Resources */,
 				D5B75C6D1297D87800A4142B /* capture_icon@2x.png in Resources */,
@@ -690,6 +707,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D59AAEEB134BC5BC00E81139 /* Icon.png in Resources */,
+				8C75148C1A1C756A00B6F2AC /* Default-568h@2x.png in Resources */,
 				D59AAEEC134BC5BC00E81139 /* Icon@2x.png in Resources */,
 				D59AAEED134BC5BC00E81139 /* capture_icon.png in Resources */,
 				D59AAEEE134BC5BC00E81139 /* capture_icon@2x.png in Resources */,
@@ -718,6 +736,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5B08A55133D30E700A60B34 /* Icon.png in Resources */,
+				8C75148B1A1C756A00B6F2AC /* Default-568h@2x.png in Resources */,
 				D5B08A56133D30E700A60B34 /* Icon@2x.png in Resources */,
 				D5B08A57133D30E700A60B34 /* capture_icon.png in Resources */,
 				D5B08A58133D30E700A60B34 /* capture_icon@2x.png in Resources */,
@@ -865,30 +884,40 @@
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Record_my_position_Prefix.pch;
+				GCC_PREFIX_HEADER = "ios-gps-recorder_Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					USE_DCINTROSPECT,
 				);
-				INFOPLIST_FILE = "resources/Record_my_position-dev.plist";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "resources/ios-gps-recorder-dev.plist";
+				PRODUCT_NAME = "ios-gps-recorder";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Record_my_position_Prefix.pch;
+				GCC_PREFIX_HEADER = "ios-gps-recorder_Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					USE_DCINTROSPECT,
 				);
-				INFOPLIST_FILE = "resources/Record_my_position-dev.plist";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "resources/ios-gps-recorder-dev.plist";
+				PRODUCT_NAME = "ios-gps-recorder";
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -897,13 +926,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -911,7 +937,8 @@
 					src,
 					external,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-weak-lSystem";
 				PREBINDING = NO;
 				PRODUCT_NAME = Record_my_position;
@@ -924,12 +951,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv7,
-					armv6,
-				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -937,7 +961,7 @@
 					src,
 					external,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-weak-lSystem";
 				PREBINDING = NO;
@@ -950,26 +974,32 @@
 		D59AAF12134BC5BC00E81139 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Record_my_position_Prefix.pch;
-				INFOPLIST_FILE = "resources/Record_my_position-appstore.plist";
-				PRODUCT_NAME = Record_my_position_appstore;
+				GCC_PREFIX_HEADER = "ios-gps-recorder_Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "resources/ios-gps-recorder-appstore.plist";
+				PRODUCT_NAME = "ios-gps-recorder_appstore";
+				PROVISIONING_PROFILE = "1e76069b-f19c-4435-ae71-4f9c5c6929d5";
 			};
 			name = Debug;
 		};
 		D59AAF13134BC5BC00E81139 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Record_my_position_Prefix.pch;
-				INFOPLIST_FILE = "resources/Record_my_position-appstore.plist";
-				PRODUCT_NAME = Record_my_position_appstore;
+				GCC_PREFIX_HEADER = "ios-gps-recorder_Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "resources/ios-gps-recorder-appstore.plist";
+				PRODUCT_NAME = "ios-gps-recorder_appstore";
+				PROVISIONING_PROFILE = "1e76069b-f19c-4435-ae71-4f9c5c6929d5";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -984,6 +1014,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Record_my_position_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = resources/Er_recorder.plist;
 				PRODUCT_NAME = Er_recorder;
 			};
@@ -997,6 +1028,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Record_my_position_Prefix.pch;
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = resources/Er_recorder.plist;
 				PRODUCT_NAME = Er_recorder;
 				VALIDATE_PRODUCT = YES;
@@ -1006,7 +1038,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Record_my_position" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ios-gps-recorder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -1015,7 +1047,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Record_my_position" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ios-gps-recorder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
@@ -1024,7 +1056,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D59AAF11134BC5BC00E81139 /* Build configuration list for PBXNativeTarget "Record_my_position_appstore" */ = {
+		D59AAF11134BC5BC00E81139 /* Build configuration list for PBXNativeTarget "ios-gps-recorder_appstore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D59AAF12134BC5BC00E81139 /* Debug */,

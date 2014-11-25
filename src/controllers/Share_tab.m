@@ -52,7 +52,7 @@
 
 	// Counter label.
 	counter_ = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, 300, 40)];
-	counter_.text = @"0 entries available";
+	counter_.text = @"データがありません";
 	_MAKE_DEFAULT_LABEL_COLOR(counter_);
 	[self.view addSubview:counter_];
 
@@ -61,8 +61,8 @@
 	share_mail_.frame = CGRectMake(20, 310, 120, 80);
 	share_mail_.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
 	share_mail_.titleLabel.textAlignment = UITextAlignmentCenter;
-	[share_mail_ setTitle:@"Send log\nby email" forState:UIControlStateNormal];
-	[share_mail_ setTitle:@"Record\npositions!"
+	[share_mail_ setTitle:@"メールで送付" forState:UIControlStateNormal];
+	[share_mail_ setTitle:@"データ収集!"
 		forState:UIControlStateDisabled];
 	[share_mail_ addTarget:self action:@selector(share_by_email)
 		forControlEvents:UIControlEventTouchUpInside];
@@ -74,9 +74,9 @@
 	share_file_.frame = CGRectMake(180, 310, 120, 80);
 	share_file_.titleLabel.lineBreakMode = UILineBreakModeWordWrap;
 	share_file_.titleLabel.textAlignment = UITextAlignmentCenter;
-	[share_file_ setTitle:@"Create log\non device"
+	[share_file_ setTitle:@"端末に保存"
 		forState:UIControlStateNormal];
-	[share_file_ setTitle:@"Record\npositions!"
+	[share_file_ setTitle:@"データ収集!"
 		forState:UIControlStateDisabled];
 	[share_file_ addTarget:self action:@selector(share_by_file)
 		forControlEvents:UIControlEventTouchUpInside];
@@ -86,17 +86,17 @@
 	// Button to purge disk database.
 	purge_ = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
 	purge_.frame = CGRectMake(20, 220, 280, 40);
-	[purge_ setTitle:@"Purge database" forState:UIControlStateNormal];
+	[purge_ setTitle:@"データを削除" forState:UIControlStateNormal];
 	[purge_ addTarget:self action:@selector(purge_database)
 		forControlEvents:UIControlEventTouchUpInside];
 	_MAKE_BUTTON_LABEL_COLOR(purge_.titleLabel);
 	[self.view addSubview:purge_];
 
-	remove_switch_ = [self build_switch:@"Remove entries after being shared"
+	remove_switch_ = [self build_switch:@"共有したデータを削除"
 		label_rect:CGRectMake(10, 70, 210, 41)
 		switch_rect:CGRectMake(220, 70, 100, 40) key:_SWITCH_KEY_NEGATED];
 
-	gpx_switch_ = [self build_switch:@"Generate basic GPX file too"
+	gpx_switch_ = [self build_switch:@"GPXファイルも生成する"
 		label_rect:CGRectMake(10, 120, 210, 41)
 		switch_rect:CGRectMake(220, 120, 100, 40) key:_SWITCH_KEY_GPX];
 
@@ -186,7 +186,7 @@
  */
 - (void)update_gui
 {
-	counter_.text = [NSString stringWithFormat:@"%d entries collected",
+	counter_.text = [NSString stringWithFormat:@"%d 件データを収集しました",
 		self.num_entries];
 	share_mail_.enabled = self.num_entries > 0;
 	share_file_.enabled = self.num_entries > 0;
@@ -215,9 +215,9 @@
  */
 - (void)purge_database
 {
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Purge database?"
-		message:@"Are you sure you want to purge the database?" delegate:self
-		cancelButtonTitle:@"Wait, no" otherButtonTitles:@"Yeah", nil];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"データ削除?"
+		message:@"データを削除して宜しいでしょうか？" delegate:self
+		cancelButtonTitle:@"いいえ" otherButtonTitles:@"はい", nil];
 	[alert show];
 	[alert release];
 }
@@ -245,9 +245,9 @@
 - (void)share_by_email
 {
 	if (![MFMailComposeViewController canSendMail]) {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No email?"
-			message:@"Uh oh, this thing can't send mail!" delegate:self
-			cancelButtonTitle:@"Hmmm..." otherButtonTitles:nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"メールがない？？"
+			message:@"Uh oh, メールで送付できません！" delegate:self
+			cancelButtonTitle:@":( Hmmm..." otherButtonTitles:nil];
 		[alert show];
 		[alert release];
 		return;

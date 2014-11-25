@@ -66,6 +66,7 @@
 	[old_location_ release];
 	[record_type_switch_ release];
 	[explanation_label_ release];
+    [start_ release];
 	[super dealloc];
 }
 
@@ -99,7 +100,7 @@
 
 	UILabel *record_type_title = [[UILabel alloc]
 		initWithFrame:CGRectMake(10, 245, 210, 30)];
-	record_type_title.text = @"Save all GPS positions";
+	record_type_title.text = @"全てのGPSデータを保存";
 	_MAKE_DEFAULT_LABEL_COLOR(record_type_title);
 	[self.view addSubview:record_type_title];
 	[record_type_title release];
@@ -114,7 +115,7 @@
 
 	explanation_label_ = [[UILabel alloc]
 		initWithFrame:CGRectMake(10, 210, 300, 25)];
-	explanation_label_.text = @"Touch the button above to save a position";
+	explanation_label_.text = @"上のボタンをタッチしてGPSデータを収集しましょう";
 	explanation_label_.adjustsFontSizeToFitWidth = YES;
 	_MAKE_DEFAULT_LABEL_COLOR(explanation_label_);
 	[self.view addSubview:explanation_label_];
@@ -165,6 +166,8 @@
 	clock_.font = [UIFont systemFontOfSize:50];
 	_MAKE_DEFAULT_LABEL_COLOR(clock_);
 	[self.view addSubview:clock_];
+    
+    start_ = [[NSDate date] retain];
 }
 
 /** The view is going to be shown. Update it.
@@ -200,7 +203,7 @@
 	if ([start_switch_ isOn]) {
 		if (![gps start]) {
 			start_switch_.on = false;
-			[self warn:@"Couldn't start GPS" title:@"GPS"];
+			[self warn:@"GPS起動できません！" title:@"GPS"];
 		} else {
 			[gps add_watcher:self];
 			watching_ = YES;
@@ -227,17 +230,23 @@
 - (void)update_gui
 {
 	// Clock time.
-	NSDate *now = [NSDate date];
+	//NSDate *now = [NSDate date];
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 	[formatter setTimeStyle:NSDateFormatterMediumStyle];
-	clock_.text = [formatter stringFromDate:now];
+    NSTimeInterval tid = [[NSDate date] timeIntervalSinceDate:start_];
+    NSDate *des = [[NSDate alloc] initWithTimeIntervalSince1970:tid];
+	clock_.text = [formatter stringFromDate:des];
+    clock_.text = [NSString stringWithFormat:@"%02li:%02li:%02li",
+                   lround(floor(tid / 3600.)) % 100,
+                   lround(floor(tid / 60.)) % 60,
+                   lround(floor(tid)) % 60];
 	[formatter release];
 
 	// State of capture.
 	if (start_switch_.on)
-		start_title_.text = @"Reading GPS...";
+		start_title_.text = @"GPS 読み込み...";
 	else
-		start_title_.text = @"GPS off";
+		start_title_.text = @"GPS ×";
 
 	// Visibility of the explanation for the second switch.
 	[UIView beginAnimations:nil context:nil];
@@ -261,7 +270,7 @@
 	// Last location.
 	CLLocation *location = [GPS get].last_pos;
 	if (!location) {
-		longitude_.text = @"No last position";
+		longitude_.text = @"最新の位置情報がありません。";
 		latitude_.text = @"";
 		precission_.text = @"";
 		altitude_.text = @"";
@@ -270,34 +279,34 @@
 		return;
 	}
 
-	longitude_.text = [NSString stringWithFormat:@"Longitude: %@",
+	longitude_.text = [NSString stringWithFormat:@"経度: %@",
 		[GPS degrees_to_dms:location.coordinate.longitude latitude:NO]];
 
-	latitude_.text = [NSString stringWithFormat:@"Latitude: %@",
+	latitude_.text = [NSString stringWithFormat:@"緯度: %@",
 		[GPS degrees_to_dms:location.coordinate.latitude latitude:YES]];
 
 	const CLLocationAccuracy v = (location.horizontalAccuracy +
 		location.horizontalAccuracy) / 2.0;
-	precission_.text = [NSString stringWithFormat:@"Precission: %0.0fm", v];
+	precission_.text = [NSString stringWithFormat:@"精度: %0.0fm", v];
 
-	altitude_.text = (location.verticalAccuracy < 0) ? @"Altitude: ?" :
-		[NSString stringWithFormat:@"Altitude: %0.0fm +/- %0.1fm",
+	altitude_.text = (location.verticalAccuracy < 0) ? @"高度: ?" :
+		[NSString stringWithFormat:@"高度: %0.0fm +/- %0.1fm",
 			location.altitude, location.verticalAccuracy];
 
-	NSTimeInterval diff = [now timeIntervalSinceDate:location.timestamp];
-	ago_.text = [NSString stringWithFormat:@"%@ ago", (diff > 60 ?
-		[NSString stringWithFormat:@"%d minute(s)", (int)diff / 60] :
-		[NSString stringWithFormat:@"%d second(s)", (int)diff])];
+	NSTimeInterval diff = [[NSDate date] timeIntervalSinceDate:location.timestamp];
+	ago_.text = [NSString stringWithFormat:@"%@ 前", (diff > 60 ?
+		[NSString stringWithFormat:@"%d 分", (int)diff / 60] :
+		[NSString stringWithFormat:@"%d 秒", (int)diff])];
 
 	if ([self.old_location
 			respondsToSelector:@selector(distanceFromLocation:)]) {
 		movement_.text = [NSString
-			stringWithFormat:@"New pos changed %0.0f meters",
+			stringWithFormat:@"位置変更 %0.0f メートル",
 			[self.old_location distanceFromLocation:location]];
 		if (![self.old_location.timestamp isEqualToDate:location.timestamp])
 			self.old_location = location;
 	} else {
-		movement_.text = self.old_location ? @"" : @"First position!";
+		movement_.text = self.old_location ? @"" : @"最初の位置!";
 		self.old_location = location;
 	}
 }
@@ -343,15 +352,15 @@
 - (void)add_note
 {
 	if (![GPS get].gps_is_on) {
-		[self warn:@"Please turn GPS on to take a note with position."
-			title:@"GPS capture off"];
+		[self warn:@"GPSを起動してください。"
+			title:@"GPS ×"];
 		return;
 	}
 
 	CLLocation *location = [GPS get].last_pos;
 	if (!location) {
-		[self warn:@"Wait until the GPS receives at least one position."
-			title:@"No GPS data"];
+		[self warn:@"GPSが位置情報を受信するまでお待ちください。"
+			title:@"GPSデータがありません"];
 		return;
 	}
 

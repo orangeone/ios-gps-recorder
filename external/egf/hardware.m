@@ -41,7 +41,7 @@ Hardware_info *get_hardware_info(void)
 	}
 
 	info->udid[0] = 0;
-	UIDevice *dev = [UIDevice currentDevice];
+/*	UIDevice *dev = [UIDevice currentDevice];
 	NSString *udid = dev.uniqueIdentifier;
 	if (udid) {
 		if (UDID_LEN == strlen([udid cStringUsingEncoding:1])) {
@@ -53,7 +53,7 @@ Hardware_info *get_hardware_info(void)
 	} else {
 		DLOG(@"Couldn't read UDID.");
 	}
-
+*/
 	sysctlbyname("hw.machine", info->name, &size, 0, 0);
 	DLOG(@"Retrieved hardware string '%s'.", info->name);
 

@@ -35,18 +35,18 @@
 		return nil;
 
 	// Create the tab bar items to associate icons.
-	item = [[UITabBarItem alloc] initWithTitle:@"Capture"
+	item = [[UITabBarItem alloc] initWithTitle:@"収集"
 		image:[UIImage imageNamed:@"capture_icon.png"] tag:0];
 	capture_tab_.tabBarItem = item;
 	[item release];
 
-	item = [[UITabBarItem alloc] initWithTitle:@"Share"
+	item = [[UITabBarItem alloc] initWithTitle:@"共有"
 		image:[UIImage imageNamed:@"share_icon.png"] tag:0];
 	share_tab_.tabBarItem = item;
 	[item release];
 
 	self.viewControllers = [NSArray arrayWithObjects:capture_tab_,
-		share_tab_, info_tab, nil];
+		share_tab_/*, info_tab*/, nil];
 	self.delegate = self;
 	[info release];
 	[info_tab release];

@@ -17,6 +17,7 @@
 	UILabel *movement_;
 	UILabel *capabilities_;
 
+    NSDate  *start_;
 	UILabel *clock_;
 	NSTimer *timer_;
 
